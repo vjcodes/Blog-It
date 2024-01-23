@@ -1,5 +1,5 @@
 import "./App.css";
-import config from "./conf/config";
+import config from "./config/config";
 
 function App() {
   console.log(config.appWriteUrl);
