@@ -3,7 +3,8 @@ import React, { useId } from "react";
 type Props = {
   label: string;
   type: string;
-  className: string;
+  className?: string;
+  placeholder: string
 };
 
 const Input = React.forwardRef(function Input(
