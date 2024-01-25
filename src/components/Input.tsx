@@ -1,10 +1,12 @@
 import React, { useId } from "react";
 
 type Props = {
-  label: string;
-  type: string;
+  label?: string;
+  type?: string;
   className?: string;
-  placeholder: string
+  placeholder?: string;
+  name?: string;
+  onInput?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input = React.forwardRef(function Input(
