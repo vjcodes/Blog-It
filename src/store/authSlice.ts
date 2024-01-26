@@ -9,11 +9,13 @@ type UserData = {
 type AuthInitialState = {
   status: boolean;
   userData: UserData | null;
+  userId: string;
 };
 
 const initialState: AuthInitialState = {
   status: false,
   userData: null,
+  userId: "",
 };
 
 const authSlice = createSlice({
@@ -23,10 +25,12 @@ const authSlice = createSlice({
     login: (state, action) => {
       state.status = true;
       state.userData = action.payload.userData;
+      state.userId = action.payload.userData.$id;
     },
     logout: (state) => {
       state.status = false;
       state.userData = null;
+      state.userId = "";
     },
   },
 });

@@ -33,10 +33,15 @@ const Header = () => {
       slug: "/all-posts",
       active: authStatus,
     },
+    {
+      name: "My Posts",
+      slug: "/my-posts",
+      active: authStatus,
+    },
   ];
 
   return (
-    <header className="py-3 shadow bg-gray-500">
+    <header className="py-3 shadow">
       <Container>
         <nav className="flex">
           <div className="mr-4">
