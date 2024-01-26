@@ -6,6 +6,7 @@ type Props = {
   bgColor?: string;
   textColor?: string;
   className?: string;
+  onClick?: () => void;
 };
 
 const Button = ({

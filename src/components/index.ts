@@ -7,6 +7,8 @@ import Login from "./Login";
 import Signup from "./Signup";
 import RTE from "./RTE";
 import ForwardedSelect from "./Select";
+import PostForm from "./postForm/PostForm";
+import PostCard from "./PostCard";
 
 export {
   Header,
@@ -18,4 +20,6 @@ export {
   Signup,
   RTE,
   ForwardedSelect,
+  PostForm,
+  PostCard
 };

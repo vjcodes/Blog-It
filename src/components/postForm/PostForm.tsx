@@ -11,7 +11,7 @@ import { ForwardedSelect, RTE } from "..";
 import Button from "../Button";
 
 interface PostFormProps {
-  post: any;
+  post?: any;
 }
 
 const PostForm: React.FC<PostFormProps> = ({ post }: any) => {
