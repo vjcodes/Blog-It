@@ -20,6 +20,7 @@ const PostForm: React.FC<PostFormProps> = ({ post }: any) => {
       defaultValues: {
         title: post?.title || "",
         slug: post?.slug || "",
+        description: post?.description || "",
         tags: [],
         content: post?.content || "",
         status: post?.status || "",
@@ -111,6 +112,14 @@ const PostForm: React.FC<PostFormProps> = ({ post }: any) => {
             });
           }}
         />
+        <Input
+          type="text"
+          label="What it's about :"
+          placeholder="Short Description"
+          className="mb-4"
+          {...register("description", { required: true })}
+        />
+
         <RTE
           label="Content :"
           name="content"

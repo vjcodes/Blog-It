@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 //   featuredImage: string;
 // };
 
-const PostCard = ({ $id, title, featuredImage }: any) => {
+const PostCard = ({ $id, title,description, featuredImage }: any) => {
   console.log({ $id, title, featuredImage })
   return (
     <Link to={`/post/${$id}`}>
@@ -25,6 +25,7 @@ const PostCard = ({ $id, title, featuredImage }: any) => {
         </div>
 
         <h2 className="tex-xl font-bold">{title}</h2>
+        <h2>{description}</h2>
       </div>
     </Link>
   );

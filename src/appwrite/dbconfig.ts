@@ -1,9 +1,11 @@
 import config from "../config/config";
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
+
 type CreatePostParams = {
   title: string;
   slug: string;
+  description: string;
   content: string;
   featuredImage: string;
   status: string;
@@ -13,6 +15,7 @@ type CreatePostParams = {
 type UpdatePostParams = {
   title: string;
   content: string;
+  description: string;
   featuredImage: string;
   status: string;
 };
@@ -34,6 +37,7 @@ export class Service {
   async createPost({
     title,
     slug,
+    description,
     content,
     featuredImage,
     status,
@@ -46,6 +50,7 @@ export class Service {
         slug,
         {
           title,
+          description,
           content,
           featuredImage,
           status,
@@ -59,7 +64,7 @@ export class Service {
 
   async updatePost(
     slug: string,
-    { title, content, featuredImage, status }: UpdatePostParams
+    { title, description, content, featuredImage, status }: UpdatePostParams
   ) {
     try {
       return await this.databases.updateDocument(
@@ -69,6 +74,7 @@ export class Service {
         {
           title,
           content,
+          description,
           featuredImage,
           status,
         }
@@ -111,6 +117,19 @@ export class Service {
         config.appWriteDatabaseId,
         config.appWriteCollectionId,
         queries
+      );
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+
+  async getMyPosts(userId:string) {
+    try {
+      return await this.databases.listDocuments(
+        config.appWriteDatabaseId,
+        config.appWriteCollectionId,
+        [Query.equal("userId", userId)]
       );
     } catch (error) {
       console.log(error);

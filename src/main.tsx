@@ -13,6 +13,7 @@ import AllPosts from "./pages/AllPosts.tsx";
 import AddPostPage from "./pages/AddPostPage.tsx";
 import EditPost from "./pages/EditPost.tsx";
 import Post from "./pages/Post.tsx";
+import MyPostsPage from "./pages/MyPostsPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,14 @@ const router = createBrowserRouter([
         element: (
           <Protected authentication>
             <AllPosts />
+          </Protected>
+        ),
+      },
+      {
+        path: "/my-posts",
+        element: (
+          <Protected authentication>
+            <MyPostsPage />
           </Protected>
         ),
       },
